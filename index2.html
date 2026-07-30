@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My BROTHERUU ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#ff758c,#ff7eb3,#ff4b6e,#ff9a9e);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+overflow-x:hidden;
+color:white;
+text-align:center;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+padding:30px 20px;
+}
+
+h1{
+    font-family:'Cinzel',serif;
+    font-size:clamp(30px,6vw,55px);
+    text-align:center;
+    color:#FFD700;
+    letter-spacing:1px;
+    line-height:1.3;
+    white-space:normal;
+    padding:0 10px;
+
+    text-shadow:
+        1px 1px 0 #B8860B,
+        2px 2px 0 #A67C00,
+        3px 3px 0 #8B6508,
+        0 0 10px #FFD700,
+        0 0 20px #FFD700;
+
+
+}
+
+.typing{
+    min-height:60px;
+    font-size:40px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+
+    background: linear-gradient(
+        90deg,
+        #00e5ff,
+        #7c4dff,
+        #ff00ff,
+        #ffffff,
+        #00e5ff
+    );
+
+    background-size: 400%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 10px #00e5ff,
+        0 0 20px #7c4dff,
+        0 0 40px #ff00ff;
+
+    animation: galaxyGlow 4s linear infinite;
+
+}
+
+section{
+padding:30px 20px;
+
+}
+
+.gallery{
+display:none;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.gallery img{
+width:280px;
+height:300px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.35);
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.06);
+}
+
+.card{
+max-width:900px;
+margin:auto;
+padding:30px;
+background:rgba(255,255,255,.15);
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+button{
+padding:15px 35px;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+background:white;
+color:#ff2d55;
+margin:15px;
+font-weight:bold;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+#counter{
+font-size:2rem;
+margin-top:20px;
+font-weight:bold;
+}
+
+footer{
+padding:30px;
+font-size:18px;
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:float 8s linear infinite;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+pointer-events:none;
+
+}
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px gold, 0 0 20px gold;
+    }
+    to {
+        text-shadow: 0 0 20px gold, 0 0 40px yellow;
+    }
+}
+
+@keyframes galaxyGlow {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+#questionPage{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+#questionPage h1{
+    font-size:60px;
+    color:#ff4da6;
+    text-shadow:
+        0 0 10px #ff4da6,
+        0 0 20px #ff1493,
+        0 0 40px #ff1493;
+    animation: glow 2s infinite alternate;
+
+
+}
+
+#yesBtn{
+
+background:#ff1493;
+
+color:white;
+
+}
+
+#noBtn{
+
+background:#444;
+
+color:white;
+
+position:absolute;
+
+top:60%;
+left:55%;
+
+}
+#secretInput{
+    width:450px;
+    height:60px;
+    font-size:24px;
+    text-align:center;
+    border-radius:40px;
+    border:3px solid gold;
+    outline:none;
+    padding:10px 20px;
+    background:white;
+    color:#ff1493;
+    box-shadow:0 0 20px gold;
+}
+
+#secretInput:focus{
+    box-shadow:
+        0 0 20px gold,
+        0 0 40px hotpink,
+        0 0 60px cyan;
+}
+</style>
+
+
+</head>
+
+<body>
+
+
+
+<div id="questionPage">
+<h1> Do You Love me ANNA? 🤨</h1>
+
+<br>
+
+<button id="yesBtn" onclick="openWebsite()">
+❤️ YES ❤️
+</button>
+
+<button id="noBtn">
+😭 NO 😭
+</button>
+
+</div>
+
+<div id="mainPage" style="display:none;">
+
+<canvas id="canvas"></canvas>
+
+<header>
+
+<h1>❤️My Dear BROTHERUUUU❤️</h1>
+
+<div class="typing"></div>
+
+<br>
+
+<button onclick="playMusic()">play your favourite lines 🥰</button>
+
+</header>
+
+<section>
+<section id="secretSection">
+
+<h2> 👇i have a secreat for u if want to see then open this 👇</h2>
+
+<input
+    type="text"
+    id="secretInput"
+    placeholder="type I LOVE MY SISTER">
+
+<button onclick="checkLove()">Open</button>
+
+<div id="gallery" class="gallery" style="display:none; margin-top:20px;">
+    <img src="anna1.jpg" width="250" Height="300">
+    <img src="anna.jpg" width="250" Height="300">
+
+</div>
+
+<br>
+
+</section>
+
+<div class="card">
+
+<h2>💌 A Letter For You</h2>
+
+<br>
+
+<p style="font-size:20px;line-height:1.8">
+
+from your loving sister🥰
+
+<br><br>
+
+You are not just my brother, you are my best friend and my biggest support. ❤️
+Thank you for always making me smile and standing by my side. hope the best for your future
+😘🙆‍♀️🫂
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<button onclick="surprise()">
+ 
+🎁 A small Surprise for u ANNA GARU
+
+</button>
+
+</section>
+
+
+<footer>
+
+Made With ❤️ Especially For You
+
+</footer>
+
+<audio id="music" src="Bro movie Annayya nuvvu pilisthe lyrical song telugu 🎶💖.mp3"></audio>
+</div>
+<script>
+
+const text=[
+"you are the best brother ❤️",
+"my strength💕",
+"My tom 🤨",
+"My Greatest Blessing ❤️"
+];
+
+let i=0;
+let j=0;
+let current="";
+let typing=document.querySelector(".typing");
+
+function type(){
+
+if(i<text.length){
+
+if(j<text[i].length){
+
+current+=text[i][j];
+
+typing.innerHTML=current;
+
+j++;
+
+setTimeout(type,100);
+
+}else{
+
+setTimeout(()=>{
+current="";
+j=0;
+i=(i+1)%text.length;
+type();
+},1800);
+
+}
+
+}
+
+}
+
+type();
+
+function playMusic(){
+
+document.getElementById("music").play();
+
+}
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*25)+"px";
+
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),9000);
+}
+
+const canvas=document.getElementById("canvas");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+function fireworks(){
+
+for(let i=0;i<180;i++){
+
+particles.push({
+
+x:canvas.width/2,
+
+y:canvas.height/2,
+
+dx:(Math.random()-0.5)*12,
+
+dy:(Math.random()-0.5)*12,
+
+life:100
+
+});
+
+}
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach((p,index)=>{
+
+ctx.beginPath();
+
+ctx.arc(p.x,p.y,3,0,Math.PI*2);
+
+ctx.fillStyle=`hsl(${Math.random()*360},100%,60%)`;
+
+ctx.fill();
+
+p.x+=p.dx;
+
+p.y+=p.dy;
+
+p.life--;
+
+if(p.life<=0){
+
+particles.splice(index,1);
+
+}
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+
+window.onresize=function() {
+
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;
+
+}
+function checkLove() {
+
+    let value = document
+        .getElementById("secretInput")
+        .value
+        .trim()
+        .toUpperCase();
+
+    if (value == "I LOVE MY SISTER") {
+
+        document.getElementById("gallery").style.display = "flex";
+        alert(" suprise bagundha anna appude em ayindhi ok nokki kindha dheko🤷‍♂️😱 ");
+    } else {
+
+        alert("❌ Wrong Secret Word");
+
+    }
+}
+function openWebsite(){
+
+    document.getElementById("questionPage").style.display="none";
+    document.getElementById("mainPage").style.display="block";
+
+    typing = document.querySelector(".typing");
+
+    current = "";
+    i = 0;
+    j = 0;
+
+    type();
+
+    playMusic();
+    fireworks();
+
+    setInterval(createHeart,300);
+
+
+
+}
+
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover",function(){
+
+let x=Math.random()*(window.innerWidth-150);
+
+let y=Math.random()*(window.innerHeight-100);
+
+noBtn.style.left=x+"px";
+
+noBtn.style.top=y+"px";
+
+});
+function surprise(){
+
+    fireworks();
+
+    alert("GOD BLESS U ANNA 😁");
+
+    document.getElementById("kissPopup").style.display = "flex";
+
+    setTimeout(function(){
+        document.getElementById("kissPopup").style.display = "none";
+    },6000);
+
+
+}
+
+</script>
+
+</body>
+</html>
